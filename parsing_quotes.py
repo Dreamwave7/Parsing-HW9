@@ -6,13 +6,15 @@ from pprint import *
 
 def pagination():
     pages = []
-    for i in range(24):
+    for i in range(1,50):
         url = f"http://quotes.toscrape.com/page/{i}/"
         response = requests.get(url)
         soup = BeautifulSoup(response.content,"html.parser")
         verify = soup.find("div",class_= "quote")
         if verify:
             pages.append(url)
+        else:
+            break
     return pages
 
 urls = pagination()
