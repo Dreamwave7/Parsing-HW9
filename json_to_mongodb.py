@@ -43,9 +43,9 @@ def author_to_base():
                 ).save()
 
 
-
-quotes_to_base()
-author_to_base()
+if __name__ == "__main__":
+    quotes_to_base()
+    author_to_base()
 
 
 
